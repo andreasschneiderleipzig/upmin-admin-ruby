@@ -2,14 +2,14 @@
 
   // Methods used in datetime parsing and setting.
   function parseDate(dateString) {
-    var matches = dateString.match(/(\d+).(\d+).(\d+)/i);
+    var matches = dateString.match(/([A-Za-z]{3}).(\d+).(\d+)/i);
     if (matches == null || matches.length < 4) {
       return null;
     } else {
       var m = moment();
-      m.utc().year(matches[1]);
-      m.utc().month(matches[2]);
-      m.utc().date(matches[3]);
+      m.utc().year(matches[3]);
+      m.utc().month(matches[1]);
+      m.utc().date(matches[2]);
       return m;
     }
   }
